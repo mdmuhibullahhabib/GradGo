@@ -7,11 +7,11 @@ import SignIn from '../Pages/SignIn';
 
 const Routes = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <Main></Main>,
         children:[
             {
-                path: '/',
+                path: "/",
                 element: <Home></Home>
             },
             {
