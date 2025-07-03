@@ -4,105 +4,105 @@ import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 
 // Example: Assume role is passed via props or context
-const Navbar = ({ role = "student" }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const role  = "consultant"
+    const commonLinks = (
+        <>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/consultants">Consultants</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+        </>
+    )
 
-  const commonLinks = (
-    <>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/consultants">Consultants</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/contact">Contact</Link></li>
-    </>
-  );
+    const roleBasedLinks = {
+        student: (
+            <>
+                <li><Link to="/student/dashboard">Dashboard</Link></li>
+                <li><Link to="/student/my-bookings">My Bookings</Link></li>
+            </>
+        ),
+        consultant: (
+            <>
+                <li><Link to="/consultant/dashboard">Dashboard</Link></li>
+                <li><Link to="/consultant/earnings">Earnings</Link></li>
+            </>
+        ),
+        admin: (
+            <>
+                <li><Link to="/admin/dashboard">Admin Panel</Link></li>
+                <li><Link to="/admin/users">Users</Link></li>
+            </>
+        ),
+    };
 
-  const roleBasedLinks = {
-    student: (
-      <>
-        <li><Link to="/student/dashboard">Dashboard</Link></li>
-        <li><Link to="/student/my-bookings">My Bookings</Link></li>
-      </>
-    ),
-    consultant: (
-      <>
-        <li><Link to="/consultant/dashboard">Dashboard</Link></li>
-        <li><Link to="/consultant/earnings">Earnings</Link></li>
-      </>
-    ),
-    admin: (
-      <>
-        <li><Link to="/admin/dashboard">Admin Panel</Link></li>
-        <li><Link to="/admin/users">Users</Link></li>
-      </>
-    ),
-  };
+    return (
+        <div className="navbar bg-base-100 shadow-md px-4 py-2">
+            <div className="flex-1">
+                <Link to="/" className="text-xl font-bold text-primary">🎓GradGo</Link>
+            </div>
 
-  return (
-    <div className="navbar bg-base-100 shadow-md px-4 py-2">
-      <div className="flex-1">
-        <Link to="/" className="text-xl font-bold text-primary">🎓GradGo</Link>
-      </div>
+            <div className="hidden lg:flex">
+                <ul className="menu menu-horizontal px-1 space-x-2">
+                    {commonLinks}
+                    {roleBasedLinks[role]}
+                </ul>
+            </div>
 
-      <div className="hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-2">
-          {commonLinks}
-          {roleBasedLinks[role]}
-        </ul>
-      </div>
+            <div className="flex-none gap-2">
+                <div className="dropdown dropdown-end">
+                    <div
+                        tabIndex={0}
+                        role="button"
+                        className="btn btn-ghost btn-circle avatar"
+                    >
+                        <FaUserCircle className="text-2xl" />
+                    </div>
+                    <ul
+                        tabIndex={0}
+                        className="mt-3 z-[99] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                    >
+                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="/settings">Settings</Link></li>
+                        <li><button>Logout</button></li>
+                    </ul>
+                </div>
 
-      <div className="flex-none gap-2">
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <FaUserCircle className="text-2xl" />
-          </div>
-          <ul
-            tabIndex={0}
-            className="mt-3 z-[99] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-          >
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/settings">Settings</Link></li>
-            <li><button>Logout</button></li>
-          </ul>
+                {/* Mobile Toggle Button */}
+                <div className="lg:hidden">
+                    <button
+                        className="btn btn-square btn-ghost"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Dropdown */}
+            {isOpen && (
+                <div className="lg:hidden w-full mt-2">
+                    <ul className="menu menu-vertical px-2">
+                        {commonLinks}
+                        {roleBasedLinks[role]}
+                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="/settings">Settings</Link></li>
+                        <li><button>Logout</button></li>
+                    </ul>
+                </div>
+            )}
         </div>
-
-        {/* Mobile Toggle Button */}
-        <div className="lg:hidden">
-          <button
-            className="btn btn-square btn-ghost"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="lg:hidden w-full mt-2">
-          <ul className="menu menu-vertical px-2">
-            {commonLinks}
-            {roleBasedLinks[role]}
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/settings">Settings</Link></li>
-            <li><button>Logout</button></li>
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default Navbar;
