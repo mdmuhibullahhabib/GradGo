@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaBars, FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
 
 const Dashboard = ({ title = "Dashboard", children, menu = [] }) => {
     const [open, setOpen] = useState(false);
-    const location = useLocation();
-
-    const noHeaderFooter = location.pathname.includes('admin/dashboard') || location.pathname.includes('consultant/dashboard') || location.pathname.includes('student/dashboard')
-
+  
     return (
         <div className="min-h-screen flex flex-col lg:flex-row">
+            
             {/* Sidebar */}
             <div className={`lg:w-64 w-full bg-base-200 p-4 lg:block ${open ? 'block' : 'hidden'}`}>
                 <h2 className="text-2xl font-bold mb-6 text-primary">StudyLink BD</h2>

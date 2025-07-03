@@ -7,7 +7,7 @@ import Footer from '../Components/Footer';
 function AuthLayout() {
     const location = useLocation();
 
-    const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register')
+    const noHeaderFooter = location.pathname.includes('auth/login') || location.pathname.includes('auth/register')
     return (
         <div>
             <header>

@@ -8,6 +8,7 @@ const menu = [
 ];
 
 const StudentDashboard = () => {
+    
   return (
     <Dashboard title="Student Dashboard" menu={menu}>
       <p>Welcome to your dashboard! Here you can manage your bookings, explore consultants, and view updates.</p>

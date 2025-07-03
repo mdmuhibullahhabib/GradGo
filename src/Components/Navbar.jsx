@@ -6,7 +6,7 @@ import { useState } from "react";
 // Example: Assume role is passed via props or context
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const role  = "consultant"
+    const role  = "student"
     const commonLinks = (
         <>
             <li><Link to="/">Home</Link></li>
