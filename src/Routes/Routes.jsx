@@ -9,7 +9,7 @@ import Contact from '../Pages/Contact/Contact';
 import Consultants from '../Pages/Consultants';
 import StudentDashboard from '../Layouts/DashboardLayout/StudentDashboard/StudentDashboard';
 import ConsultantDashboard from '../Layouts/DashboardLayout/ConsultantDashboard/ConsultantDashboard';
-import AdminDashboard from '../Layouts/DashboardLayout/AdminDashboard/AdminDashboard';
+// import AdminDashboard from '../Layouts/DashboardLayout/AdminDashboard/AdminDashboard';
 import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
@@ -21,6 +21,7 @@ import MyStudents from '../Pages/Consultents/MyStudents';
 import Dashboard from '../Layouts/DashboardLayout/Dashboard/Dashboard';
 import ManageCandidates from '../Pages/Admin/ManageCandidates';
 import Revenue from '../Pages/Admin/Revinue';
+import AdminDashboard from '../Pages/Admin/AdminDashboard';
 
 const Routes = createBrowserRouter([
     {
