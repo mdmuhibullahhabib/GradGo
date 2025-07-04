@@ -7,14 +7,14 @@ import Footer from '../Components/Footer';
 function AuthLayout() {
     const location = useLocation();
 
-    const noHeaderFooter = location.pathname.includes('auth/login') || location.pathname.includes('auth/register')
+    const noHeaderFooter = location.pathname.includes('auth/signin') || location.pathname.includes('auth/signup')
     return (
         <div>
             <header>
                 {noHeaderFooter || <Navbar></Navbar>}
             </header>
             
-            <div className="mt-14">
+            <div className="">
                 <Outlet></Outlet>
             </div>
 

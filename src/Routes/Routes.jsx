@@ -6,27 +6,23 @@ import SignUp from '../Pages/SignUp';
 import SignIn from '../Pages/SignIn';
 import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
-import Consultants from '../Pages/Consultents/Consultants';
+import Consultants from '../Pages/Consultants';
 import StudentDashboard from '../Layouts/DashboardLayout/StudentDashboard/StudentDashboard';
 import ConsultantDashboard from '../Layouts/DashboardLayout/ConsultantDashboard/ConsultantDashboard';
 import AdminDashboard from '../Layouts/DashboardLayout/AdminDashboard/AdminDashboard';
+import AuthLayout from '../Layouts/AuthLayouts';
+import MyBookings from '../Pages/Student/MyBookings';
+import AllUsers from '../Pages/Admin/AllUsers';
+import Earnings from '../Pages/Consultents/Earnings';
 
 const Routes = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: "/",
                 element: <Home></Home>
-            },
-            {
-                path: '/signup',
-                element: <SignUp></SignUp>
-            },
-            {
-                path: '/signin',
-                element: <SignIn></SignIn>
             },
             {
                 path: '/about',
@@ -41,6 +37,18 @@ const Routes = createBrowserRouter([
                 element: <Consultants></Consultants>
             },
             {
+                path: '/student/my-bookings',
+                element: <MyBookings></MyBookings>
+            },
+            {
+                path: '/consultant/earnings',
+                element: <Earnings></Earnings>
+            },
+            {
+                path: '/admin/users',
+                element: <AllUsers></AllUsers>
+            },
+            {
                 path: "/student/dashboard",
                 element: <StudentDashboard></StudentDashboard>
             },
@@ -52,14 +60,21 @@ const Routes = createBrowserRouter([
                 path: "/admin/dashboard",
                 element: <AdminDashboard></AdminDashboard>
             },
+        ]
 
-//             <Route path="/student/dashboard" element={<StudentDashboard />} />
-// <Route path="/consultant/dashboard" element={<ConsultantDashboard />} />
-// <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            // {
-            //     path: '/',
-            //     element: <Home></Home>
-            // },
+    },
+    {
+        path: "/auth",
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: '/auth/signup',
+                element: <SignUp></SignUp>
+            },
+            {
+                path: '/auth/signin',
+                element: <SignIn></SignIn>
+            },
         ]
     }
 ])
