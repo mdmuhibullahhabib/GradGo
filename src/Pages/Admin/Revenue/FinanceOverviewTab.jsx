@@ -30,10 +30,10 @@ const overviewData = {
     { month: "Apr", amount: 15500 },
   ],
   asset: [
-    { month: "Jan", amount: 12000 },
-    { month: "Feb", amount: 15000 },
-    { month: "Mar", amount: 18000 },
-    { month: "Apr", amount: 20000 },
+    { month: "Jan", amount: 12000 }
+    { month: "Feb", amount: 15000 }
+    { month: "Mar", amount: 18000 }
+    { month: "Apr", amount: 20000 }
   ],
 };
 
