@@ -42,7 +42,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/consultant/earnings',
-                element: <Earnings></Earnings>
+                element: <Earnings></Earnings>,
             },
             {
                 path: '/admin/users',
