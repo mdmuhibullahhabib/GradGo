@@ -50,7 +50,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: "/student/dashboard",
-                element: <StudentDashboard></StudentDashboard>
+                element: <StudentDashboard></StudentDashboard>,
             },
             {
                 path: "/consultant/dashboard",
