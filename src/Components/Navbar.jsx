@@ -51,6 +51,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex-none gap-2">
+           {user && user?.email ? (
                 <div className="dropdown dropdown-end">
                     <div
                         tabIndex={0}
@@ -68,6 +69,9 @@ const Navbar = () => {
                         <li><button>Logout</button></li>
                     </ul>
                 </div>
+                 ) : (
+            <Link to="/signin" className="btn btn-sm bg-orange-400 text-white hover:bg-orange-500">Login</Link>
+          )}
 
                 {/* Mobile Toggle Button */}
                 <div className="lg:hidden">
