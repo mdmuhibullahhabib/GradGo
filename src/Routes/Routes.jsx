@@ -46,7 +46,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/admin/users',
-                element: <AllUsers></AllUsers>
+                element: <AllUsers></AllUsers>,
             },
             {
                 path: "/student/dashboard",
