@@ -72,7 +72,10 @@ const Routes = createBrowserRouter([
             },
 
             // PROFILE
-           
+            {
+                path: "/profile",
+                element: <Profile></Profile>
+            },
         ]
 
     },
