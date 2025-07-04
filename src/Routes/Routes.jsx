@@ -19,10 +19,10 @@ import Gigs from '../Pages/Consultents/Gig';
 import MyStudents from '../Pages/Consultents/MyStudents';
 import Dashboard from '../Layouts/DashboardLayout/Dashboard/Dashboard';
 import ManageCandidates from '../Pages/Admin/ManageCandidates';
-import Revenue from '../Pages/Admin/Revenue';
 import AdminDashboard from '../Pages/Admin/AdminDashboard';
 import AllTransactions from '../Pages/Admin/AllTranjections';
 import ManageGigs from '../Pages/Admin/ManageGigs';
+import Finance from '../Pages/Admin/Revenue/Finance';
 
 const Routes = createBrowserRouter([
     {
@@ -102,8 +102,8 @@ const Routes = createBrowserRouter([
                         element: <ManageGigs></ManageGigs>
                     },
                     {
-                        path: '/dashboard/admin/revenue',
-                        element: <Revenue></Revenue>
+                        path: '/dashboard/admin/finance',
+                        element: <Finance></Finance>
                     },
                 ]
             },

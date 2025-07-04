@@ -26,9 +26,9 @@ const Dashboard = () => {
                                 <FaUsersCog />
                                 Dashboard
                             </NavLink>
-                            <NavLink to="/dashboard/admin/revenue" className="flex items-center gap-2 w-full btn btn-outline">
+                            <NavLink to="/dashboard/admin/finance" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUsersCog />
-                                Revenue
+                                Finance
                             </NavLink>
                             <NavLink to="/dashboard/all-tranjection" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUserCog /> All Tranjections

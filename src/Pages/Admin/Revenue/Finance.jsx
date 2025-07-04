@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import RevenueTab from "./Revenue/RevenueTab";
-import EarningsTab from "./Revenue/EarningsTab";
-import ExpendTab from "./Revenue/ExpendTab";
-import AssetTab from "./Revenue/AssetTab";
-import FinanceOverviewTab from "./Revenue/FinanceOverviewTab";
+import RevenueTab from "./RevenueTab";
+import EarningsTab from "./EarningsTab";
+import ExpendTab from "./ExpendTab";
+import AssetTab from "./AssetTab";
+import FinanceOverviewTab from "./FinanceOverviewTab";
 
 const tabs = ["FinanceOverview", "Revenue", "Earnings", "Expend", "Asset"];
 
-const Revenue = () => {
+const Finance = () => {
   const [activeTab, setActiveTab] = useState("FinanceOverview");
 
   return (
@@ -39,4 +39,4 @@ const Revenue = () => {
   );
 };
 
-export default Revenue;
+export default Finance;
