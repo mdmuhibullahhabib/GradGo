@@ -37,21 +37,21 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         updateUserProfile({ displayName: name, photoURL: image })
-        .then(() => {
-          axiosPublic.post('/users', userData)
-          .then(res => {
-            if (res.data.insertedId) {
-              console.log('add to database', res.data)
-              setUser({ ...user, displayName: name, photoURL: image });
-              navigate("/");
-              Swal.fire({
-                title: "Registration Successfully!",
-                icon: "success",
-                draggable: true
-              });
-            }
-          })
-        })
+        // .then(() => {
+        //   axiosPublic.post('/users', userData)
+        //   .then(res => {
+        //     if (res.data.insertedId) {
+        //       console.log('add to database', res.data)
+        //       setUser({ ...user, displayName: name, photoURL: image });
+        //       navigate("/");
+        //       Swal.fire({
+        //         title: "Registration Successfully!",
+        //         icon: "success",
+        //         draggable: true
+        //       });
+        //     }
+        //   })
+        // })
       })
   };
 
