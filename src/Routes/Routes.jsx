@@ -26,7 +26,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About></About>
+                element: <About></About>,
             },
             {
                 path: '/contact',
