@@ -14,6 +14,8 @@ import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
 import Earnings from '../Pages/Consultents/Earnings';
+import Profile from '../Pages/Profile/Profile';
+import Settings from '../Pages/Setting/Settings';
 
 const Routes = createBrowserRouter([
     {
@@ -48,6 +50,8 @@ const Routes = createBrowserRouter([
                 path: '/admin/users',
                 element: <AllUsers></AllUsers>,
             },
+
+            // DASHBOARD
             {
                 path: "/student/dashboard",
                 element: <StudentDashboard></StudentDashboard>,
@@ -60,9 +64,20 @@ const Routes = createBrowserRouter([
                 path: "/admin/dashboard",
                 element: <AdminDashboard></AdminDashboard>
             },
+
+            // SETTINGS
+            {
+                path: "/settings",
+                element: <Settings></Settings>
+            },
+
+            // PROFILE
+           
         ]
 
     },
+
+    // AUTH
     {
         path: "/auth",
         element: <AuthLayout></AuthLayout>,

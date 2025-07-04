@@ -8,7 +8,6 @@ import useAuth from "../hooks/useAuth";
 // Example: Assume role is passed via props or context
 const Navbar = () => {
     const { user, logOut } = useAuth()
-    console.log(user)
     const [isOpen, setIsOpen] = useState(false);
     const role = "admin"
     const commonLinks = (
