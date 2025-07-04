@@ -9,7 +9,6 @@ import Contact from '../Pages/Contact/Contact';
 import Consultants from '../Pages/Consultants';
 import StudentDashboard from '../Layouts/DashboardLayout/StudentDashboard/StudentDashboard';
 import ConsultantDashboard from '../Layouts/DashboardLayout/ConsultantDashboard/ConsultantDashboard';
-// import AdminDashboard from '../Layouts/DashboardLayout/AdminDashboard/AdminDashboard';
 import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
@@ -20,8 +19,10 @@ import Gigs from '../Pages/Consultents/Gig';
 import MyStudents from '../Pages/Consultents/MyStudents';
 import Dashboard from '../Layouts/DashboardLayout/Dashboard/Dashboard';
 import ManageCandidates from '../Pages/Admin/ManageCandidates';
-import Revenue from '../Pages/Admin/Revinue';
+import Revenue from '../Pages/Admin/Revenue';
 import AdminDashboard from '../Pages/Admin/AdminDashboard';
+import AllTransactions from '../Pages/Admin/AllTranjections';
+import ManageGigs from '../Pages/Admin/ManageGigs';
 
 const Routes = createBrowserRouter([
     {
@@ -85,12 +86,20 @@ const Routes = createBrowserRouter([
                         element: <AdminDashboard></AdminDashboard>
                     },
                     {
+                        path: '/dashboard/all-tranjection',
+                        element: <AllTransactions></AllTransactions>
+                    },
+                    {
                         path: '/dashboard/admin/users',
                         element: <AllUsers></AllUsers>,
                     },
                     {
                         path: '/dashboard/admin/consultant-requests',
                         element: <ManageCandidates></ManageCandidates>
+                    },
+                    {
+                        path: '/dashboard/admin/manage-gigs',
+                        element: <ManageGigs></ManageGigs>
                     },
                     {
                         path: '/dashboard/admin/revenue',
@@ -100,10 +109,10 @@ const Routes = createBrowserRouter([
             },
 
             // admin
-            {
-                path: "/admin/dashboard",
-                element: <AdminDashboard></AdminDashboard>
-            },
+            // {
+            //     path: "/admin/dashboard",
+            //     element: <AdminDashboard></AdminDashboard>
+            // },
 
             // SETTINGS
             {

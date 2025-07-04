@@ -35,7 +35,7 @@ const Navbar = () => {
         ),
         admin: (
             <>
-                <li><Link to="/admin/dashboard">Admin Panel</Link></li>
+                <li><Link to="/dashboard/admin-dashboard">Admin Panel</Link></li>
                 <li><Link to="/admin/users">Users</Link></li>
             </>
         ),

@@ -26,35 +26,33 @@ const Dashboard = () => {
                                 <FaUsersCog />
                                 Dashboard
                             </NavLink>
-                            <NavLink to="/dashboard/admin-profile" className="flex items-center gap-2 w-full btn btn-outline">
-                                <FaUserCog /> Manage Profile
+                            <NavLink to="/dashboard/admin/revenue" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUsersCog />
+                                Revenue
+                            </NavLink>
+                            <NavLink to="/dashboard/all-tranjection" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUserCog /> All Tranjections
                             </NavLink>
                             <NavLink to="/dashboard/admin/consultant-requests" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaTasks /> Manage Candidates
                             </NavLink>
-                            {/* <NavLink to="/dashboard/add-package" className="flex items-center gap-2 w-full btn btn-outline">
-                                <FaPlusCircle /> Add Package
-                            </NavLink> */}
+                            <NavLink to="/dashboard/admin/manage-gigs" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaTasks /> Manage Gigs
+                            </NavLink>
                             <NavLink to="/dashboard/admin/users" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUsers /> All Users
-                            </NavLink>
+                            </NavLink>                           
                         </>
                     )}
 
                     {isRole === "consultant" && (
                         <>
                             <h3 className="text-lg font-bold mb-3">Consultant Dashboard</h3>
-                            <NavLink to="/dashboard/profile" className="flex items-center gap-2 w-full btn btn-outline">
-                                <FaUserEdit /> Manage Profile
-                            </NavLink>
                             <NavLink to="/dashboard/my-students" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUser /> My Students
                             </NavLink>
                             <NavLink to="/dashboard/my-gigs" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaClipboardList /> My Gigs
-                            </NavLink>
-                            <NavLink to="/dashboard/add-gig" className="flex items-center gap-2 w-full btn btn-outline">
-                                <FaPlusCircle /> Add Gig
                             </NavLink>
                         </>
                     )}
@@ -75,12 +73,14 @@ const Dashboard = () => {
                     )}
 
                     <div className="divider"></div>
-                    <button className="btn btn-ghost w-full text-left">
+                  <div className="left">
+                      <button className="btn btn-ghost w-full text-left">
                         <FaHome className="mr-2" /> Home
                     </button>
                     <button className="btn btn-ghost w-full text-left">
                         <FaSignOutAlt className="mr-2" /> Logout
                     </button>
+                  </div>
                 </nav>
             </aside>
 

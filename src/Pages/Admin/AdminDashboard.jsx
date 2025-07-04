@@ -77,33 +77,6 @@ const AdminDashboard = () => {
         </ResponsiveContainer>
       </div>
 
-      {/* Quick Access Links */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <Link
-          to="/dashboard/manage-users"
-          className="btn btn-outline btn-accent w-full flex justify-start gap-3 text-lg"
-        >
-          <FaUsers /> Manage Users
-        </Link>
-        <Link
-          to="/dashboard/manage-candidates"
-          className="btn btn-outline btn-primary w-full flex justify-start gap-3 text-lg"
-        >
-          <FaTasks /> Manage Candidates
-        </Link>
-        <Link
-          to="/dashboard/revenue"
-          className="btn btn-outline btn-success w-full flex justify-start gap-3 text-lg"
-        >
-          <FaChartBar /> Revenue Overview
-        </Link>
-        <Link
-          to="/dashboard/admin-profile"
-          className="btn btn-outline btn-warning w-full flex justify-start gap-3 text-lg"
-        >
-          <FaUserCog /> Admin Profile
-        </Link>
-      </div>
     </div>
   );
 };
