@@ -1,56 +1,104 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { Outlet, NavLink, Link } from "react-router-dom";
+import {
+    FaBars, FaHome, FaUserCog, FaTasks, FaUsers,
+    FaUser, FaSuitcase, FaPen, FaPlusCircle, FaUserTie,
+    FaUserEdit, FaClipboardList, FaFolderOpen, FaSignOutAlt,
+    FaUsersCog
+} from "react-icons/fa";
+// import useRole from "../hooks/useRole";
 
-const Dashboard = ({ title = "Dashboard", children, menu = [] }) => {
+const Dashboard = () => {
+    //   const [isRole] = useRole();
+    const isRole = 'admin'
     const [open, setOpen] = useState(false);
-  
+
     return (
         <div className="min-h-screen flex flex-col lg:flex-row">
-            
             {/* Sidebar */}
-            <div className={`lg:w-64 w-full bg-base-200 p-4 lg:block ${open ? 'block' : 'hidden'}`}>
-                <h2 className="text-2xl font-bold mb-6 text-primary">StudyLink BD</h2>
-                <ul className="menu space-y-2">
-                    <li>
-                        <Link to="/">
-                            <FaHome className="mr-2" /> Home
-                        </Link>
-                    </li>
-                    {menu.map((item, i) => (
-                        <li key={i}>
-                            <Link to={item.path}>
-                                {item.icon && <item.icon className="mr-2" />}
-                                {item.label}
-                            </Link>
-                        </li>
-                    ))}
-                    <li>
-                        <button>
-                            <FaSignOutAlt className="mr-2" /> Logout
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <aside className={`bg-base-200 p-4 w-full lg:w-64 lg:block ${open ? 'block' : 'hidden'}`}>
+                <nav className="space-y-2">
+
+                    {isRole === "admin" && (
+                        <>
+                            <h3 className="text-lg font-bold mb-3">Admin Dashboard</h3>
+                            <NavLink to="/dashboard/admin-dashboard" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUsersCog />
+                                Dashboard
+                            </NavLink>
+                            <NavLink to="/dashboard/admin-profile" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUserCog /> Manage Profile
+                            </NavLink>
+                            <NavLink to="/dashboard/admin/consultant-requests" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaTasks /> Manage Candidates
+                            </NavLink>
+                            {/* <NavLink to="/dashboard/add-package" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaPlusCircle /> Add Package
+                            </NavLink> */}
+                            <NavLink to="/dashboard/admin/users" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUsers /> All Users
+                            </NavLink>
+                        </>
+                    )}
+
+                    {isRole === "consultant" && (
+                        <>
+                            <h3 className="text-lg font-bold mb-3">Consultant Dashboard</h3>
+                            <NavLink to="/dashboard/profile" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUserEdit /> Manage Profile
+                            </NavLink>
+                            <NavLink to="/dashboard/my-students" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUser /> My Students
+                            </NavLink>
+                            <NavLink to="/dashboard/my-gigs" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaClipboardList /> My Gigs
+                            </NavLink>
+                            <NavLink to="/dashboard/add-gig" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaPlusCircle /> Add Gig
+                            </NavLink>
+                        </>
+                    )}
+
+                    {isRole === "student" && (
+                        <>
+                            <h3 className="text-lg font-bold mb-3">Student Dashboard</h3>
+                            <NavLink to="/dashboard/profile" className="btn btn-ghost justify-start gap-2 w-full">
+                                <FaUser /> Manage Profile
+                            </NavLink>
+                            <NavLink to="/dashboard/bookings" className="btn btn-ghost justify-start gap-2 w-full">
+                                <FaSuitcase /> My Bookings
+                            </NavLink>
+                            <NavLink to="/dashboard/join-consultant" className="btn btn-ghost justify-start gap-2 w-full">
+                                <FaUserTie /> Become a Consultant
+                            </NavLink>
+                        </>
+                    )}
+
+                    <div className="divider"></div>
+                    <button className="btn btn-ghost w-full text-left">
+                        <FaHome className="mr-2" /> Home
+                    </button>
+                    <button className="btn btn-ghost w-full text-left">
+                        <FaSignOutAlt className="mr-2" /> Logout
+                    </button>
+                </nav>
+            </aside>
 
             {/* Main Content */}
-            <div className="flex-1 p-4">
-                {/* Topbar (Mobile) */}
-                <div className="lg:hidden flex justify-between items-center mb-4">
-                    <h1 className="text-2xl font-bold text-primary">{title}</h1>
-                    <button className="btn btn-sm" onClick={() => setOpen(!open)}>
+            <main className="flex-1 p-6 bg-base-100">
+                {/* Mobile Top Bar */}
+                <div className="lg:hidden mb-4 flex justify-between items-center">
+                    <h1 className="text-xl font-bold text-primary">Dashboard</h1>
+                    <button onClick={() => setOpen(!open)} className="btn btn-sm">
                         <FaBars />
                     </button>
                 </div>
 
-                {/* Desktop title */}
-                <div className="hidden lg:block">
-                    <h1 className="text-3xl font-bold text-primary mb-6">{title}</h1>
+                {/* Render nested routes */}
+                <div className="bg-white shadow p-4 rounded min-h-[300px]">
+                    <Outlet></Outlet>
                 </div>
-
-                {/* Injected Children */}
-                <div className="bg-white shadow rounded p-4">{children}</div>
-            </div>
+            </main>
         </div>
     );
 };

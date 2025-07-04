@@ -2,14 +2,15 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
-import { AuthContext } from "../Provider/Authprovider";
 import useAuth from "../hooks/useAuth";
+
 
 // Example: Assume role is passed via props or context
 const Navbar = () => {
     const { user, logOut } = useAuth()
     const [isOpen, setIsOpen] = useState(false);
     const role = "admin"
+    
     const commonLinks = (
         <>
             <li><Link to="/">Home</Link></li>

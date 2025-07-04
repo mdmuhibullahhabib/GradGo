@@ -16,6 +16,11 @@ import AllUsers from '../Pages/Admin/AllUsers';
 import Earnings from '../Pages/Consultents/Earnings';
 import Profile from '../Pages/Profile/Profile';
 import Settings from '../Pages/Setting/Settings';
+import Gigs from '../Pages/Consultents/Gig';
+import MyStudents from '../Pages/Consultents/MyStudents';
+import Dashboard from '../Layouts/DashboardLayout/Dashboard/Dashboard';
+import ManageCandidates from '../Pages/Admin/ManageCandidates';
+import Revenue from '../Pages/Admin/Revinue';
 
 const Routes = createBrowserRouter([
     {
@@ -42,24 +47,58 @@ const Routes = createBrowserRouter([
                 path: '/student/my-bookings',
                 element: <MyBookings></MyBookings>,
             },
-            {
-                path: '/consultant/earnings',
-                element: <Earnings></Earnings>,
-            },
-            {
-                path: '/admin/users',
-                element: <AllUsers></AllUsers>,
-            },
+
+
 
             // DASHBOARD
+
+            //    student
             {
                 path: "/student/dashboard",
                 element: <StudentDashboard></StudentDashboard>,
             },
+
+            // consultant
             {
                 path: "/consultant/dashboard",
                 element: <ConsultantDashboard></ConsultantDashboard>
             },
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>,
+                children: [
+
+                    // colsultant
+                    {
+                        path: "/dashboard/my-gigs",
+                        element: <Gigs></Gigs>
+                    },
+                    {
+                        path: "/dashboard/my-students",
+                        element: <MyStudents></MyStudents>
+                    },
+
+                    // admin
+                    {
+                        path: '/dashboard/admin-dashboard',
+                        element: <AdminDashboard></AdminDashboard>
+                    },
+                    {
+                        path: '/dashboard/admin/users',
+                        element: <AllUsers></AllUsers>,
+                    },
+                    {
+                        path: '/dashboard/admin/consultant-requests',
+                        element: <ManageCandidates></ManageCandidates>
+                    },
+                    {
+                        path: '/dashboard/admin/revenue',
+                        element: <Revenue></Revenue>
+                    },
+                ]
+            },
+
+            // admin
             {
                 path: "/admin/dashboard",
                 element: <AdminDashboard></AdminDashboard>
