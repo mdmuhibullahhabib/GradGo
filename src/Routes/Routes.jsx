@@ -34,7 +34,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/consultants',
-                element: <Consultants></Consultants>
+                element: <Consultants></Consultants>,
             },
             {
                 path: '/student/my-bookings',
