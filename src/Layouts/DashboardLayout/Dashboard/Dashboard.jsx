@@ -51,7 +51,9 @@ const Dashboard = () => {
                             <NavLink to="/dashboard/consultant-earnings" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaDollarSign /> Earnings
                             </NavLink>
-                         
+                            <NavLink to="/dashboard/upcoming-sessions" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaClipboardList /> Sessions
+                            </NavLink>
                             <NavLink to="/dashboard/my-gigs" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaClipboardList /> My Gigs
                             </NavLink>
