@@ -9,7 +9,7 @@ import useAuth from "../hooks/useAuth";
 const Navbar = () => {
     const { user, logOut } = useAuth()
     const [isOpen, setIsOpen] = useState(false);
-    const role = "admin"
+    const role = "consultant"
     
     const commonLinks = (
         <>
@@ -29,8 +29,7 @@ const Navbar = () => {
         ),
         consultant: (
             <>
-                <li><Link to="/consultant/dashboard">Dashboard</Link></li>
-                <li><Link to="/consultant/earnings">Earnings</Link></li>
+                <li><Link to="/dashboard/consultant-dashboard">Dashboard</Link></li>
             </>
         ),
         admin: (

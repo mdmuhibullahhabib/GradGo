@@ -4,13 +4,15 @@ import {
     FaBars, FaHome, FaUserCog, FaTasks, FaUsers,
     FaUser, FaSuitcase, FaPen, FaPlusCircle, FaUserTie,
     FaUserEdit, FaClipboardList, FaFolderOpen, FaSignOutAlt,
-    FaUsersCog
+    FaUsersCog,
+    FaDashcube,
+    FaDollarSign
 } from "react-icons/fa";
 // import useRole from "../hooks/useRole";
 
 const Dashboard = () => {
     //   const [isRole] = useRole();
-    const isRole = 'admin'
+    const isRole = 'consultant'
     const [open, setOpen] = useState(false);
 
     return (
@@ -48,6 +50,12 @@ const Dashboard = () => {
                     {isRole === "consultant" && (
                         <>
                             <h3 className="text-lg font-bold mb-3">Consultant Dashboard</h3>
+                            <NavLink to="/dashboard/consultant-dashboard" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaDashcube /> Dashboard
+                            </NavLink>
+                            <NavLink to="/dashboard/consultant-earnings" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaDollarSign /> Earnings
+                            </NavLink>
                             <NavLink to="/dashboard/my-students" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUser /> My Students
                             </NavLink>

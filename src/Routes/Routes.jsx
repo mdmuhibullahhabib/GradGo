@@ -8,11 +8,9 @@ import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
 import Consultants from '../Pages/Consultants';
 import StudentDashboard from '../Layouts/DashboardLayout/StudentDashboard/StudentDashboard';
-import ConsultantDashboard from '../Layouts/DashboardLayout/ConsultantDashboard/ConsultantDashboard';
 import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
-import Earnings from '../Pages/Consultents/Earnings';
 import Profile from '../Pages/Profile/Profile';
 import Settings from '../Pages/Setting/Settings';
 import Gigs from '../Pages/Consultents/Gig';
@@ -23,6 +21,8 @@ import AdminDashboard from '../Pages/Admin/AdminDashboard';
 import AllTransactions from '../Pages/Admin/AllTranjections';
 import ManageGigs from '../Pages/Admin/ManageGigs';
 import Finance from '../Pages/Admin/Revenue/Finance';
+import ConsultantDashboard from '../Pages/Consultents/ConsultantDashboard';
+import Earnings from '../Pages/Consultents/Earnings';
 
 const Routes = createBrowserRouter([
     {
@@ -60,17 +60,20 @@ const Routes = createBrowserRouter([
                 element: <StudentDashboard></StudentDashboard>,
             },
 
-            // consultant
-            {
-                path: "/consultant/dashboard",
-                element: <ConsultantDashboard></ConsultantDashboard>
-            },
             {
                 path: "/dashboard",
                 element: <Dashboard></Dashboard>,
                 children: [
 
                     // colsultant
+                    {
+                        path: "/dashboard/consultant-dashboard",
+                        element: <ConsultantDashboard></ConsultantDashboard>
+                    },
+                    {
+                        path: "/dashboard/consultant-earnings",
+                        element: <Earnings></Earnings>
+                    },
                     {
                         path: "/dashboard/my-gigs",
                         element: <Gigs></Gigs>
@@ -107,12 +110,6 @@ const Routes = createBrowserRouter([
                     },
                 ]
             },
-
-            // admin
-            // {
-            //     path: "/admin/dashboard",
-            //     element: <AdminDashboard></AdminDashboard>
-            // },
 
             // SETTINGS
             {
