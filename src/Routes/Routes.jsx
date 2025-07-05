@@ -6,9 +6,7 @@ import SignUp from '../Pages/SignUp';
 import SignIn from '../Pages/SignIn';
 import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
-import Consultants from '../Pages/Consultants';
-import StudentDashboard from '../Layouts/DashboardLayout/StudentDashboard/StudentDashboard';
-import AuthLayout from '../Layouts/AuthLayouts';
+import Consultants from '../Pages/Consultants'; import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
 import Profile from '../Pages/Profile/Profile';
@@ -23,6 +21,7 @@ import ManageGigs from '../Pages/Admin/ManageGigs';
 import Finance from '../Pages/Admin/Revenue/Finance';
 import ConsultantDashboard from '../Pages/Consultents/ConsultantDashboard';
 import Earnings from '../Pages/Consultents/Earnings';
+import JoinConsultant from '../Pages/Student/JoinColsultant';
 
 const Routes = createBrowserRouter([
     {
@@ -45,25 +44,27 @@ const Routes = createBrowserRouter([
                 path: '/consultants',
                 element: <Consultants></Consultants>,
             },
-            {
-                path: '/student/my-bookings',
-                element: <MyBookings></MyBookings>,
-            },
 
 
 
             // DASHBOARD
 
             //    student
-            {
-                path: "/student/dashboard",
-                element: <StudentDashboard></StudentDashboard>,
-            },
 
             {
                 path: "/dashboard",
                 element: <Dashboard></Dashboard>,
                 children: [
+
+                    // student
+                    {
+                        path: '/dashboard/student/my-bookings',
+                        element: <MyBookings></MyBookings>,
+                    },
+                    {
+                        path: '/dashboard/join-consultant',
+                        element: <JoinConsultant></JoinConsultant>
+                    },
 
                     // colsultant
                     {

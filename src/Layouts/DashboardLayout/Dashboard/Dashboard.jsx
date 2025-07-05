@@ -12,7 +12,7 @@ import {
 
 const Dashboard = () => {
     //   const [isRole] = useRole();
-    const isRole = 'consultant'
+    const isRole = 'student'
     const [open, setOpen] = useState(false);
 
     return (
