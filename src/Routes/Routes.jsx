@@ -22,6 +22,7 @@ import Finance from '../Pages/Admin/Revenue/Finance';
 import ConsultantDashboard from '../Pages/Consultents/ConsultantDashboard';
 import Earnings from '../Pages/Consultents/Earnings';
 import JoinConsultant from '../Pages/Student/JoinColsultant';
+import UpcomingSessions from '../Pages/Consultents/UpcomingSessions';
 
 const Routes = createBrowserRouter([
     {
@@ -58,7 +59,7 @@ const Routes = createBrowserRouter([
 
                     // student
                     {
-                        path: '/dashboard/student/my-bookings',
+                        path: '/dashboard/my-bookings',
                         element: <MyBookings></MyBookings>,
                     },
                     {
@@ -74,6 +75,10 @@ const Routes = createBrowserRouter([
                     {
                         path: "/dashboard/consultant-earnings",
                         element: <Earnings></Earnings>
+                    },
+                    {
+                        path: "/dashboard/upcoming-sessions",
+                        element: <UpcomingSessions></UpcomingSessions>
                     },
                     {
                         path: "/dashboard/my-gigs",

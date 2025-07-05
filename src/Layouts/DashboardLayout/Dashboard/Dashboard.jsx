@@ -12,7 +12,7 @@ import {
 
 const Dashboard = () => {
     //   const [isRole] = useRole();
-    const isRole = 'student'
+    const isRole = 'consultant'
     const [open, setOpen] = useState(false);
 
     return (
@@ -20,9 +20,8 @@ const Dashboard = () => {
             {/* Sidebar */}
             <aside className={`bg-base-200 p-4 w-full lg:w-64 lg:block ${open ? 'block' : 'hidden'}`}>
                 <nav className="space-y-2">
-
-                    {isRole === "admin" && (
-                        <>
+                    {
+                        isRole === "admin" ? <>
                             <h3 className="text-lg font-bold mb-3">Admin Dashboard</h3>
                             <NavLink to="/dashboard/admin-dashboard" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUsersCog />
@@ -43,12 +42,8 @@ const Dashboard = () => {
                             </NavLink>
                             <NavLink to="/dashboard/admin/users" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaUsers /> All Users
-                            </NavLink>                           
-                        </>
-                    )}
-
-                    {isRole === "consultant" && (
-                        <>
+                            </NavLink>
+                        </> : isRole === "consultant" ? <>
                             <h3 className="text-lg font-bold mb-3">Consultant Dashboard</h3>
                             <NavLink to="/dashboard/consultant-dashboard" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaDashcube /> Dashboard
@@ -56,39 +51,33 @@ const Dashboard = () => {
                             <NavLink to="/dashboard/consultant-earnings" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaDollarSign /> Earnings
                             </NavLink>
-                            <NavLink to="/dashboard/my-students" className="flex items-center gap-2 w-full btn btn-outline">
-                                <FaUser /> My Students
-                            </NavLink>
+                         
                             <NavLink to="/dashboard/my-gigs" className="flex items-center gap-2 w-full btn btn-outline">
                                 <FaClipboardList /> My Gigs
                             </NavLink>
-                        </>
-                    )}
-
-                    {isRole === "student" && (
-                        <>
-                            <h3 className="text-lg font-bold mb-3">Student Dashboard</h3>
-                            <NavLink to="/dashboard/profile" className="btn btn-ghost justify-start gap-2 w-full">
-                                <FaUser /> Manage Profile
+                            <NavLink to="/dashboard/my-students" className="flex items-center gap-2 w-full btn btn-outline">
+                                <FaUser /> My Students
                             </NavLink>
-                            <NavLink to="/dashboard/bookings" className="btn btn-ghost justify-start gap-2 w-full">
+                        </> : <>
+                            <h3 className="text-lg font-bold mb-3">Student Dashboard</h3>
+                            <NavLink to="/dashboard/my-bookings" className="btn btn-ghost justify-start gap-2 w-full">
                                 <FaSuitcase /> My Bookings
                             </NavLink>
                             <NavLink to="/dashboard/join-consultant" className="btn btn-ghost justify-start gap-2 w-full">
                                 <FaUserTie /> Become a Consultant
                             </NavLink>
                         </>
-                    )}
+                    }
 
                     <div className="divider"></div>
-                  <div className="left">
-                      <button className="btn btn-ghost w-full text-left">
-                        <FaHome className="mr-2" /> Home
-                    </button>
-                    <button className="btn btn-ghost w-full text-left">
-                        <FaSignOutAlt className="mr-2" /> Logout
-                    </button>
-                  </div>
+                    <div className="left">
+                        <button className="btn btn-ghost w-full text-left">
+                            <FaHome className="mr-2" /> Home
+                        </button>
+                        <button className="btn btn-ghost w-full text-left">
+                            <FaSignOutAlt className="mr-2" /> Logout
+                        </button>
+                    </div>
                 </nav>
             </aside>
 
