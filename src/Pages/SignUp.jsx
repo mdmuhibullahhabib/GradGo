@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from '../Provider/Authprovider';
-import useAxiosPublic from '../hooks/useAxiosPublic';
 import Swal from 'sweetalert2'
+import useAxiosPublic from '../hooks/useAxiosPublic';
+import useAuth from '../hooks/useAuth';
 
 const SignUp = () => {
 
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
   const [error, setError] = useState();
-  const { user, signUp, setUser, updateUserProfile } = useContext(AuthContext);
+  const { user, signUp, setUser, updateUserProfile } = useAuth()
 
 
   const handleSignup = (e) => {
@@ -37,21 +37,21 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         updateUserProfile({ displayName: name, photoURL: image })
-        // .then(() => {
-        //   axiosPublic.post('/users', userData)
-        //   .then(res => {
-        //     if (res.data.insertedId) {
-        //       console.log('add to database', res.data)
-        //       setUser({ ...user, displayName: name, photoURL: image });
-        //       navigate("/");
-        //       Swal.fire({
-        //         title: "Registration Successfully!",
-        //         icon: "success",
-        //         draggable: true
-        //       });
-        //     }
-        //   })
-        // })
+        .then(() => {
+          axiosPublic.post('/users', userData)
+          .then(res => {
+            if (res.data.insertedId) {
+              console.log('add to database', res.data)
+              setUser({ ...user, displayName: name, photoURL: image });
+              navigate("/");
+              Swal.fire({
+                title: "Registration Successfully!",
+                icon: "success",
+                draggable: true
+              });
+            }
+          })
+        })
       })
   };
 
