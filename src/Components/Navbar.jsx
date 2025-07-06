@@ -23,7 +23,7 @@ const Navbar = () => {
     const roleBasedLinks = {
         student: (
             <>
-                <li><Link to="/dashboard/student/my-bookings">Dashboard</Link></li>
+                <li><Link to="/dashboard/my-bookings">Dashboard</Link></li>
             </>
         ),
         consultant: (
