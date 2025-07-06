@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import useAuth from '../hooks/useAuth';
+import axios from 'axios';
 
 const SignUp = () => {
 
@@ -27,6 +28,7 @@ const SignUp = () => {
       setError("Must be more the 5 character long");
       return;
     }
+
     // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     // if (!passwordRegex.test(password)) {
     //   setError("Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long.")
