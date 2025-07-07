@@ -46,8 +46,7 @@ const Gigs = () => {
 
             <Link
               to={`/gigs/${gig._id}`}
-                // state={{ gig }}
-                gig={gig}
+                state={{ gig }}
               className="btn btn-sm btn-primary w-full mt-auto"
             >
               View Details

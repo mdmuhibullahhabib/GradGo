@@ -11,7 +11,8 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
 
-    const [isRole] = useRole();
+    // const [isRole] = useRole();
+        const isRole = 'admin'
     console.log(isRole)
 
     const commonLinks = (
