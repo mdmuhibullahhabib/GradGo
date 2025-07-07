@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import useConsultant from "../hooks/useConsultant";
 
 const consultants = [
   {
@@ -33,6 +34,9 @@ const consultants = [
 ];
 
 const Consultants = () => {
+
+  const[consultant] = useConsultant();
+  console.log(consultant)
   return (
     <div className="py-12 px-4 max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-10">

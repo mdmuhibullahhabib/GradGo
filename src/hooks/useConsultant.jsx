@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 // import useAxiosSecure from "./useAxiosSecure";
 import useAxiosPublic from "./useAxiosPublic";
 
-const useGuide =() => {
+const useConsultant =() => {
     // const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
-    const {data: guides = [], refetch} = useQuery({
+    const {data: consultant = [], refetch} = useQuery({
         queryKey: ['consultant'],
         queryFn: async() =>{
             const res = await axiosPublic.get('/users/consultant');
@@ -13,8 +13,8 @@ const useGuide =() => {
             return res.data;
         }
     })
-    console.log(guides)
+    console.log(consultant)
     return [consultant, refetch]
 };
 
-export default useGuide;
+export default useConsultant;
