@@ -6,12 +6,12 @@ import SignUp from '../Pages/SignUp';
 import SignIn from '../Pages/SignIn';
 import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
-import Consultants from '../Pages/Consultants'; import AuthLayout from '../Layouts/AuthLayouts';
 import MyBookings from '../Pages/Student/MyBookings';
 import AllUsers from '../Pages/Admin/AllUsers';
 import Profile from '../Pages/Profile/Profile';
 import Settings from '../Pages/Setting/Settings';
-import Gigs from '../Pages/Consultents/Gig';
+// import Gigs from '../Pages/Consultents/Gig';
+import AuthLayout from '../Layouts/AuthLayouts';
 import MyStudents from '../Pages/Consultents/MyStudents';
 import Dashboard from '../Layouts/DashboardLayout/Dashboard/Dashboard';
 import ManageCandidates from '../Pages/Admin/ManageCandidates';
@@ -23,6 +23,8 @@ import ConsultantDashboard from '../Pages/Consultents/ConsultantDashboard';
 import Earnings from '../Pages/Consultents/Earnings';
 import JoinConsultant from '../Pages/Student/JoinColsultant';
 import UpcomingSessions from '../Pages/Consultents/UpcomingSessions';
+import Gigs from '../Pages/Gigs/Gigs';
+import GigDetails from '../Pages/Gigs/GigDetails';
 
 const Routes = createBrowserRouter([
     {
@@ -42,9 +44,18 @@ const Routes = createBrowserRouter([
                 element: <Contact></Contact>,
             },
             {
-                path: '/consultants',
-                element: <Consultants></Consultants>,
+                path: '/gigs',
+                element: <Gigs></Gigs>
             },
+            {
+                path: '/gigs/_id',
+                element: <GigDetails></GigDetails>,
+            },
+            //       {
+            //     path: "/package/:_id",
+            //     element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
+            //     loader: ({ params }) => fetch(`https://tourism-management-server-ten.vercel.app/package/${params._id}`),
+            // }
 
 
 
@@ -80,10 +91,12 @@ const Routes = createBrowserRouter([
                         path: "/dashboard/upcoming-sessions",
                         element: <UpcomingSessions></UpcomingSessions>
                     },
-                    {
-                        path: "/dashboard/my-gigs",
-                        element: <Gigs></Gigs>
-                    },
+
+                    // TO DO
+                    // {
+                    //     path: "/dashboard/my-gigs",
+                    //     element: <Gigs></Gigs>
+                    // },
                     {
                         path: "/dashboard/my-students",
                         element: <MyStudents></MyStudents>
