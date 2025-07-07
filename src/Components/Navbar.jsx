@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import useRole from "../hooks/useRole";
 
 
 // Example: Assume role is passed via props or context
 const Navbar = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
-    const role = "student"
-    
+
+    const [isRole] = useRole();
+    console.log(isRole)
+
     const commonLinks = (
         <>
             <li><Link to="/">Home</Link></li>
@@ -19,6 +22,8 @@ const Navbar = () => {
             <li><Link to="/contact">Contact</Link></li>
         </>
     );
+
+    // const [isRole] = user?.role || "student";
 
     const roleBasedLinks = {
         student: (
@@ -38,6 +43,8 @@ const Navbar = () => {
             </>
         ),
     };
+        const userLinks = roleBasedLinks[isRole || "student"];
+
 
     const handleLogout = () => {
         logOut()
@@ -54,7 +61,7 @@ const Navbar = () => {
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 space-x-2">
                     {commonLinks}
-                    {roleBasedLinks[role]}
+                     {userLinks}
                 </ul>
             </div>
 
