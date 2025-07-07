@@ -1,34 +1,15 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
-const dummyGigs = {
-  gig1: {
-    id: "gig1",
-    title: "Study Abroad Guidance – USA",
-    price: 3000,
-    description: "In-depth support on university selection, SOP review, and visa process.",
-    consultant: {
-      id: "consult1",
-      name: "Tanvir Rahman",
-      shortBio: "5+ years experience with USA & Canada student visas",
-    },
-  },
-  gig2: {
-    id: "gig2",
-    title: "IELTS Preparation with Expert",
-    price: 2000,
-    description: "Weekly mock tests, speaking practice, and materials.",
-    consultant: {
-      id: "consult2",
-      name: "Sumaiya Akter",
-      shortBio: "IELTS trainer with British Council certification",
-    },
-  },
-};
 
 const GigDetails = () => {
-  const { gigId } = useParams();
-  const gig = dummyGigs[gigId];
+    const location = useLocation()
+  const { _id } = useParams();
+    const gig = location.state?.gig;
+
+// console.log(gig)
+console.log(_id)
+
 
   if (!gig) return <p className="text-center py-8">Gig not found</p>;
 

@@ -1,36 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useGigs from "../../hooks/useGigs";
 
-const gigs = [
-  {
-    id: "gig1",
-    title: "Study Abroad Guidance – USA",
-    price: 3000,
-    description: "Get personalized advice on applying to top US universities.",
-    category: "USA Admission",
-    consultant: {
-      id: "consult1",
-      name: "Tanvir Rahman",
-      photo: "https://i.pravatar.cc/40?img=3",
-      shortBio: "5+ years of experience with USA & Canada student visas",
-    },
-  },
-  {
-    id: "gig2",
-    title: "IELTS Preparation with Expert",
-    price: 2000,
-    description: "High-band strategy and resources for IELTS success.",
-    category: "IELTS Training",
-    consultant: {
-      id: "consult2",
-      name: "Sumaiya Akter",
-      photo: "https://i.pravatar.cc/40?img=5",
-      shortBio: "IELTS trainer with British Council certification",
-    },
-  },
-];
 
 const Gigs = () => {
+    const [gigs] =useGigs();
+    console.log(gigs)
+
   return (
     <div className="p-6 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-primary mb-6">Explore Consultant Gigs</h2>
@@ -69,8 +45,9 @@ const Gigs = () => {
             </div>
 
             <Link
-              to={`/gigs/${gig.id}`}
-                state={{ gig }}
+              to={`/gigs/${gig._id}`}
+                // state={{ gig }}
+                gig={gig}
               className="btn btn-sm btn-primary w-full mt-auto"
             >
               View Details

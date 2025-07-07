@@ -9,11 +9,9 @@ const useGigs =() => {
         queryKey: ['gigs'],
         queryFn: async() =>{
             const res = await axiosPublic.get('/gigs');
-            console.log('gigs', res.data)
             return res.data;
         }
     })
-    console.log(gigs)
     return [gigs, refetch]
 };
 
