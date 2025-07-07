@@ -6,15 +6,15 @@ const useGuide =() => {
     // const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
     const {data: guides = [], refetch} = useQuery({
-        queryKey: ['guides'],
+        queryKey: ['consultant'],
         queryFn: async() =>{
             const res = await axiosPublic.get('/users/consultant');
-            console.log('Guide', res.data)
+            console.log('consultant', res.data)
             return res.data;
         }
     })
     console.log(guides)
-    return [guides, refetch]
+    return [consultant, refetch]
 };
 
 export default useGuide;
