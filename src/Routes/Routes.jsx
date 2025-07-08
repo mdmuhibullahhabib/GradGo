@@ -52,7 +52,7 @@ const Routes = createBrowserRouter([
                 element: <GigDetails></GigDetails>,
             },
                   {
-                path: "/package/:_id",
+                path: "/package
 
 
 
