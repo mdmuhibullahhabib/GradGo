@@ -51,11 +51,10 @@ const Routes = createBrowserRouter([
                 path: '/gigs/:_id',
                 element: <GigDetails></GigDetails>,
             },
-            //       {
-            //     path: "/package/:_id",
-            //     element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
-            //     loader: ({ params }) => fetch(`https://tourism-management-server-ten.vercel.app/package/${params._id}`),
-            // }
+                  {
+                path: "/package/:_id",
+                element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
+
 
 
 
