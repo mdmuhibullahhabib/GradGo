@@ -145,7 +145,7 @@ const Routes = createBrowserRouter([
         children: [
             {
                 path: '/auth/signup',
-                element: <SignUp></SignUp>
+                element: <SignUp></SignUp>,
             },
             {
                 path: '/auth/signin',
