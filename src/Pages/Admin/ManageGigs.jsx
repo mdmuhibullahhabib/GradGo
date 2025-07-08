@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCheckCircle, FaTrash, FaClock } from "react-icons/fa";
+import useGigs from "../../hooks/useGigs";
 
 const mockGigs = [
   {
@@ -26,7 +27,8 @@ const mockGigs = [
 ];
 
 const ManageGigs = () => {
-  const [gigs, setGigs] = useState(mockGigs);
+  // const [gigs, setGigs] = useState(mockGigs);
+      const [gigs] =useGigs();
 
   const handleApprove = (id) => {
     const updated = gigs.map((gig) =>

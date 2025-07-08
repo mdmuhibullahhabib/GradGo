@@ -21,7 +21,7 @@ const SignUp = () => {
     const email = form.email.value;
     const image = form.image.value;
     const password = form.password.value;
-    const role = student;
+    const role = "student";
 
     const userData = { name, email, role }
     setError('');
