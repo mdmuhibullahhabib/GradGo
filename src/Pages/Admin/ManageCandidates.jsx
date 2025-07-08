@@ -31,13 +31,25 @@ const ManageCandidates = () => {
     }); 
   };
 
-  const handleReject = async (id) => {
-    try {
-      await fetch(`/api/candidates/${id}/reject`, { method: "PATCH" });
-      refetch();
-    } catch (error) {
-      console.error("Rejection failed:", error);
-    }
+  const handleReject =  (id) => {
+       Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to Reject this User?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Reject it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/guide/application/${id}`)
+          .then(res => {
+            refetch()
+            console.log(res)
+            if (res.data.deletedCount > 0) {
+              Swal.fire('Rejected!', 'Your User has been Delete.', 'success');
+            }
+          });
+      }
+    });
   };
 
   return (
