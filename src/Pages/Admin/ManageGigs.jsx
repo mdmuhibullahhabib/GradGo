@@ -24,7 +24,7 @@ const ManageGigs = () => {
             refetch()
             console.log(res)
             if (res.data.deletedCount > 0) {
-              Swal.fire('Deleted!', 'Your User has been Delete.', 'success');
+              Swal.fire('Deleted!', 'Gig has been Delete.', 'success');
             }
           });
       }
