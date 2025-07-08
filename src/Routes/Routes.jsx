@@ -82,7 +82,7 @@ const Routes = createBrowserRouter([
                     },
                     {
                         path: "/dashboard/upcoming-sessions",
-                        element: <UpcomingSessions></UpcomingSessions>
+                        element: <UpcomingSessions></UpcomingSessions>,
                     },
 
                     // TO DO
