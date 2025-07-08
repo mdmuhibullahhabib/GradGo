@@ -2,13 +2,15 @@ import React from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import useCandidates from "../../hooks/useCandidates";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const ManageCandidates = () => {
+  const axiosSecure = useAxiosSecure();
   const [candidates, refetch] = useCandidates();
 
-  const handleApprove = async (id) => {
-    console.log(app)
+  const handleApprove = (c) => {
+    console.log(c)
     Swal.fire({
       title: "Are you sure?",
       text: `Can you make Consultant this user!`,
@@ -19,33 +21,35 @@ const ManageCandidates = () => {
       confirmButtonText: `Yes, make Consultant!`
     }).then((result) => {
       if (result.isConfirmed) {
-          axiosSecure.patch(`/users/guide/${app.applyId}`, { role: 'consultant' })
+        axiosSecure.patch(`/users/consultant/${c._id}`, { role: 'consultant' })
+        axiosSecure.post('/consultant', c)
           .then(res => {
-            axiosSecure.delete(`/consultant/application/${app._id}`)
+            axiosSecure.delete(`/consultant/application/${c._id}`)
             refetch();
             if (res.data.modifiedCound > 0) {
               Swal.fire('Success', `Succesfully add to Consultant.`, 'success');
             }
           })
       }
-    }); 
+    });
   };
 
-  const handleReject =  (id) => {
-       Swal.fire({
+  const handleReject = (id) => {
+    console.log(id)
+    Swal.fire({
       title: 'Are you sure?',
-      text: 'You want to Reject this User?',
+      text: 'You want to Reject this Candidates?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, Reject it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/guide/application/${id}`)
+        axiosSecure.delete(`/candidates/application/${id}`)
           .then(res => {
             refetch()
             console.log(res)
             if (res.data.deletedCount > 0) {
-              Swal.fire('Rejected!', 'Your User has been Delete.', 'success');
+              Swal.fire('Rejected!', 'Candidates has been Delete.', 'success');
             }
           });
       }
@@ -102,13 +106,12 @@ const ManageCandidates = () => {
                 </td>
                 <td>
                   <span
-                    className={`badge ${
-                      c.status === "Approved"
+                    className={`badge ${c.status === "Approved"
                         ? "badge-success"
                         : c.status === "Rejected"
-                        ? "badge-error"
-                        : "badge-warning"
-                    }`}
+                          ? "badge-error"
+                          : "badge-warning"
+                      }`}
                   >
                     {c.status}
                   </span>
@@ -117,7 +120,7 @@ const ManageCandidates = () => {
                   <button
                     className="btn btn-sm btn-success"
                     disabled={c.status !== "Pending"}
-                    onClick={() => handleApprove(c._id)}
+                    onClick={() => handleApprove(c)}
                   >
                     <FaCheckCircle className="mr-1" /> Approve
                   </button>
