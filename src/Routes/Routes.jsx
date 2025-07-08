@@ -68,7 +68,7 @@ const Routes = createBrowserRouter([
                     },
                     {
                         path: '/dashboard/join-consultant',
-                        element: <JoinConsultant></JoinConsultant>
+                        element: <JoinConsultant></JoinConsultant>,
                     },
 
                     // colsultant
