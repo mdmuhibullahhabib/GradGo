@@ -52,11 +52,6 @@ const Routes = createBrowserRouter([
                 element: <GigDetails></GigDetails>,
             },
 
-
-
-
-
-
             // DASHBOARD
 
             //    student
@@ -83,7 +78,7 @@ const Routes = createBrowserRouter([
                     },
                     {
                         path: "/dashboard/consultant-earnings",
-                        element: <Earnings></Earnings>
+                        element: <Earnings></Earnings>,
                     },
                     {
                         path: "/dashboard/upcoming-sessions",
