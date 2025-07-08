@@ -53,7 +53,7 @@ const Routes = createBrowserRouter([
             },
                   {
                 path: "/package/:_id",
-                element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
+                element: <PrivateRoute><PackageDetails></PackageDetails>
 
 
 
