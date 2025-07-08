@@ -45,7 +45,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/gigs',
-                element: <Gigs></Gigs>
+                element: <Gigs></Gigs>,
             },
             {
                 path: '/gigs/:_id',
