@@ -11,8 +11,7 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
 
-    // const [isRole] = useRole();
-        const isRole = 'admin'
+    const [isRole] = useRole();
     console.log(isRole)
 
     const commonLinks = (
@@ -23,8 +22,6 @@ const Navbar = () => {
             <li><Link to="/contact">Contact</Link></li>
         </>
     );
-
-    // const [isRole] = user?.role || "student";
 
     const roleBasedLinks = {
         student: (
@@ -40,7 +37,6 @@ const Navbar = () => {
         admin: (
             <>
                 <li><Link to="/dashboard/admin-dashboard">Admin Panel</Link></li>
-                <li><Link to="/admin/users">Users</Link></li>
             </>
         ),
     };

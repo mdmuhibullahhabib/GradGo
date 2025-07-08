@@ -11,8 +11,7 @@ import {
 // import useRole from "../hooks/useRole";
 
 const Dashboard = () => {
-    //   const [isRole] = useRole();
-    const isRole = 'admin'
+      const [isRole] = useRole();
     const [open, setOpen] = useState(false);
 
     return (
