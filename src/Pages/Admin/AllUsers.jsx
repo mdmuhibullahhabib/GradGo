@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUserShield, FaTrashAlt } from "react-icons/fa";
+import useAllUser from "../../hooks/useAllUser";
 
 const mockUsers = [
   { id: 1, name: "Samiha Rahman", email: "samiha@mail.com", role: "student" },
@@ -8,6 +9,11 @@ const mockUsers = [
 ];
 
 const AllUsers = () => {
+
+  const [users, refetch] = useAllUser()
+
+  console.log(users)
+
   const handleDelete = (id) => {
     alert(`Delete user ID: ${id}`);
     // Connect with backend API here
@@ -33,8 +39,8 @@ const AllUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {mockUsers.map((user, idx) => (
-              <tr key={user.id}>
+            {users.map((user, idx) => (
+              <tr key={user._id}>
                 <td>{idx + 1}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>

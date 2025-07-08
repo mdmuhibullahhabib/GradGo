@@ -21,8 +21,9 @@ const SignUp = () => {
     const email = form.email.value;
     const image = form.image.value;
     const password = form.password.value;
+    const role = student;
 
-    const userData = { name, email }
+    const userData = { name, email, role }
     setError('');
     if (password.length < 5) {
       setError("Must be more the 5 character long");

@@ -8,7 +8,7 @@ import {
     FaDashcube,
     FaDollarSign
 } from "react-icons/fa";
-// import useRole from "../hooks/useRole";
+import useRole from "../../../hooks/useRole";
 
 const Dashboard = () => {
       const [isRole] = useRole();

@@ -14,7 +14,7 @@ const Gigs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {gigs.map((gig) => (
           <div
-            key={gig.id}
+            key={gig._id}
             className="relative bg-white/60 backdrop-blur-md shadow-lg p-5 rounded-xl border border-gray-200 hover:shadow-2xl transition-all"
           >
             <h3 className="text-xl font-bold text-gray-800 mb-2">{gig.title}</h3>
