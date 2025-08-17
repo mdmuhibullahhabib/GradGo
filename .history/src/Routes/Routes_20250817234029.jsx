@@ -53,7 +53,7 @@ const Routes = createBrowserRouter([
                 element: <GigDetails></GigDetails>,
             },
             {
-                path: '/messages',
+                path: '/message',
                 element: <Message></Message>
             },
 

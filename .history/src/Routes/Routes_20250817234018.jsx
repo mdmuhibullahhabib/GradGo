@@ -25,7 +25,6 @@ import JoinConsultant from '../Pages/Student/JoinColsultant';
 import UpcomingSessions from '../Pages/Consultents/UpcomingSessions';
 import Gigs from '../Pages/Gigs/Gigs';
 import GigDetails from '../Pages/Gigs/GigDetails';
-import Message from '../Pages/Message/Message';
 
 const Routes = createBrowserRouter([
     {
@@ -53,8 +52,8 @@ const Routes = createBrowserRouter([
                 element: <GigDetails></GigDetails>,
             },
             {
-                path: '/messages',
-                element: <Message></Message>
+                path: '/message',
+                element: <Message
             },
 
             // DASHBOARD
