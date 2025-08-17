@@ -58,7 +58,7 @@ const Navbar = () => {
         {/* Right: Icons & Auth */}
         <div className="flex items-center gap-4">
           <Link to="/messages"><FaEnvelope className="text-xl cursor-pointer" /></Link>
-          <Link to="/favourites"><FaHeart className="text-xl cursor-pointer" /></Link>
+          <Link to="/favorites"><FaHeart className="text-xl cursor-pointer" /></Link>
           <Link to="/orders"><FaShoppingBag className="text-xl cursor-pointer" /></Link>
 
           {user?.email ? (

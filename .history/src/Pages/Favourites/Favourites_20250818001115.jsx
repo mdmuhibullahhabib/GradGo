@@ -34,7 +34,7 @@ const favoriteUsers = [
   },
 ];
 
-const Favourites = () => {
+const Favorites = () => {
   return (
     <div className="bg-white border rounded-2xl shadow p-4">
       <h2 className="text-lg font-semibold text-gray-700 mb-3">Favorites</h2>

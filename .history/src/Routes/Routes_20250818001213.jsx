@@ -26,7 +26,6 @@ import UpcomingSessions from '../Pages/Consultents/UpcomingSessions';
 import Gigs from '../Pages/Gigs/Gigs';
 import GigDetails from '../Pages/Gigs/GigDetails';
 import Message from '../Pages/Message/Message';
-import Favourites from '../Pages/Favourites/Favourites';
 
 const Routes = createBrowserRouter([
     {
@@ -58,8 +57,8 @@ const Routes = createBrowserRouter([
                 element: <Message></Message>
             },
             {
-                path: '/favourites',
-                element: <Favourites></Favourites>
+                path: '/messages',
+                element: <Message></Message>
             },
 
             // DASHBOARD

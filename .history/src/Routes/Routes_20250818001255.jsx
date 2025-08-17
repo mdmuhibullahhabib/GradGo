@@ -59,7 +59,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/favourites',
-                element: <Favourites></Favourites>
+                element: <Favourites
             },
 
             // DASHBOARD
