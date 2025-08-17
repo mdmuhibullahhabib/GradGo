@@ -25,7 +25,7 @@ const HomeBanner = () => {
             <Link to="/consultants" className="btn btn-primary rounded-full px-6">
               Browse Consultants
             </Link>
-            <Link to="/student/dashboard" className="btn btn-outline btn-accent rounded-full px-6">
+            <Link to="/gigs" className="btn btn-outline btn-accent rounded-full px-6">
               Get Started
             </Link>
           </div>

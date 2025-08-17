@@ -51,10 +51,6 @@ const Routes = createBrowserRouter([
                 path: '/gigs/:_id',
                 element: <GigDetails></GigDetails>,
             },
-            {
-                path: '/message',
-                element: <Messag
-            },
 
             // DASHBOARD
 

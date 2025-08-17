@@ -53,7 +53,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/message',
-                element: <Messag
+                element: <GigDetails></GigDetails>,
             },
 
             // DASHBOARD
