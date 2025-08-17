@@ -275,7 +275,7 @@ const Gigs = () => {
     <div className="p-6 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-primary mb-6">Explore Consultant Gigs</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {gigs.map((gig) => (
           <div
             key={gig._id}
